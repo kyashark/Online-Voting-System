@@ -1,5 +1,4 @@
-// Menu
-
+// Hamburger Menu
 const menuItem = document.getElementById("menu-item");
 
 menuItem.addEventListener("click",function(){

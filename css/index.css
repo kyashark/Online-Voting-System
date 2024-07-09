@@ -9,10 +9,13 @@
 }
 
 :root {
-  --black: #212121;
-  --light_green: #9bed0a;
-  --bg_color: #eeeff3;
-  --grey: #d8d9dd;
+  --black: hsl(0, 0%, 13%);
+  --light_green: hsl(82, 92%, 48%);
+  --bg_color: hsl(0, 0%, 100%);
+  --grey: hsl(228, 7%, 86%);
+  --purple:hsl(268, 100%, 75%);
+  /* --black_grey:#8E8E8E; */
+  --black_grey:hsl(0, 0%, 50%);
 }
 
 body{
@@ -21,34 +24,37 @@ body{
 
 
 /* Navigation */
-nav {
+header {
   display: flex;
   align-items: center;
   justify-content: space-around;
   margin-left: 10px;
   margin-right: 10px;
+  max-width: 1536px;
+
 }
 
-nav .logo {
+header .logo {
   font-size: 85px;
   font-weight: bold;
 }
 
-nav .nav-bar {
+nav .nav-bar{
   position: relative;
   display: flex;
   gap: 30px;
   list-style: none;
   font-size: 18px; 
   font-weight: 500;
+  background-color: var(--bg_color);
 }
 
-nav .nav-bar li a {
+nav li a {
   text-decoration: none;
   color: var(--black);
 }
 
-nav .nav-bar li a:hover{
+nav li a:hover{
     color:var(--light_green);
 }
 
@@ -56,8 +62,7 @@ nav .nav-bar li a:hover{
 .side-nav{
     display: flex;
     align-items: center;
-    font-weight: 500;
-    
+    font-weight: 500;    
 }
 
 .login-btn {
@@ -91,6 +96,70 @@ nav .nav-bar li a:hover{
 }
 
 
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  margin:10px;   
+}
+
+.container{
+  width:1100px;
+  height: 500px;
+  display: flex;
+  gap:10px;
+}
+
+.col-left{
+  flex:3;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+ 
+}
+
+.col-right{
+  flex:2;
+  border-radius:20px;
+  /* background-image:url(../images/spider-man.jpg); */
+  background-color: var(--black_grey);
+  background-size: 100% 100%;
+}
+
+.row{
+  gap:10px;
+  border-radius: 20px;
+}
+
+.row1{
+  flex:4;
+  background: linear-gradient(180deg, #000000, #666666);
+}
+
+.row2{
+  flex:2;
+  display: flex;
+  gap:10px;
+
+}
+
+.row-col{
+  border-radius:20px;
+}
+
+.col1{
+  flex:1;
+  background-color: var(--purple);
+}
+
+.col2{
+  flex:1;
+  background-color: var(--black_grey);
+}
+
+
+
+
 
 /* Responsive */
 
@@ -113,18 +182,26 @@ nav .nav-bar li a:hover{
 
 
 @media only screen and (max-width: 768px){
-    nav .logo{
+    header .logo{
         font-size: 80px;
     }
 
     .side-nav{
         margin-left: 300px;
+        
     }
 
+    nav{
+      position: absolute;
+      margin-top: 350px;
+      width: 100%;  
+    }
+
+    nav li{
+      margin-bottom:10px;
+    }
     nav .nav-bar{
-        position: absolute;
         flex-direction: column;
-        margin-top: 300px;
         align-items: center;
         width:100%;
         opacity: 0;
@@ -179,9 +256,16 @@ nav .nav-bar li a:hover{
     .side-nav{
         margin-left: 150px;
     }
+
 }
 
+@media only screen and (max-width: 575px){
+  .container{
+    flex-direction: column;
+  }
 
+
+}
 
 
 }
